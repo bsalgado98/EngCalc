@@ -1,0 +1,19 @@
+.root {
+    font-family: 'Times New Roman';
+    -fx-background-color: #26A69A;
+    -fx-font-size: 12pt;
+}
+
+.accordion .titled-pane > *.content{
+    -fx-background-color: transparent ;
+}
+
+.titledpane {
+    -fx-background-color: #26A69A;
+    font-family: 'Times New Roman', sans-serif;
+}
+
+.vbox {
+    -fx-background-color: #26A69A;
+    font-family: 'Times New Roman', sans-serif;
+}
