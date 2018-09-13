@@ -11,12 +11,17 @@ public class Exam1 extends Equation{
 		super(eqName);
 	}
 	
+	public Exam1() {
+		
+	}
+	
+	@Override
 	public double solve() {
 		switch (this.eqName) {
 			case "Periodic Interest Rate":
 				return periodicInterestRate();
-			case "Effective Interest Rate":
-				return effectiveInterestRate();
+			case "Effective Annual Interest Rate":
+				return effectiveAnnualInterestRate();
 			case "Future Worth":
 				return futureWorth();
 			case "Present Worth":
@@ -39,15 +44,15 @@ public class Exam1 extends Equation{
 		return i_m;
 	}
 	
-	public double effectiveInterestRate() {
+	public double effectiveAnnualInterestRate() {
 		double i_a = -999;
 		double r = this.values.get("r");
 		
-		if(this.options.contains("periodically")) {
+		if(this.options.contains("Periodic")) {
 			double M = this.values.get("M");
 			i_a = Math.pow(1 + (r/M), M) - 1;
 		}
-		else if(this.options.contains("continuously")) {
+		else if(this.options.contains("Continuous")) {
 			i_a = Math.pow(Math.E, r) - 1;
 		}
 		//else {i_a = 999}
@@ -60,11 +65,11 @@ public class Exam1 extends Equation{
 		double i = this.values.get("i");
 		double N = this.values.get("N");
 		
-		if(this.options.contains("present")) {
+		if(this.options.contains("Present")) {
 			double P = this.values.get("P");
 			F = P * Math.pow(1 + i, N);
 		}
-		else if(this.options.contains("future")) {
+		else if(this.options.contains("Future")) {
 			double A = this.values.get("A");
 			F = A * ((Math.pow(1 + i, N) - 1) / i);
 		}
@@ -77,11 +82,11 @@ public class Exam1 extends Equation{
 		double i = this.values.get("i");
 		double N = this.values.get("N");
 		
-		if(this.options.contains("present")) {
+		if(this.options.contains("Present")) {
 			double F = this.values.get("F");
-			P = F * (i / (Math.pow(1 + i, N) - 1));
+			P = F * (i / (Math.pow(1 + i, -N) - 1));
 		}
-		else if(this.options.contains("future")) {
+		else if(this.options.contains("Future")) {
 			double A = this.values.get("A");
 			P = A * ((Math.pow(1 + i, N) - 1) / (i * Math.pow(1 + i, N)));
 		}
@@ -94,11 +99,11 @@ public class Exam1 extends Equation{
 		double i = this.values.get("i");
 		double N = this.values.get("N");
 		
-		if(this.options.contains("present")) {
+		if(this.options.contains("Present")) {
 			double F = this.values.get("F");
 			A = F * (i / (Math.pow(1 + i, N) - 1));
 		}
-		else if(this.options.contains("future")) {
+		else if(this.options.contains("Future")) {
 			double P = this.values.get("P");
 			A = P * ((i * Math.pow(1 + i, N) / (Math.pow(1 + i, N) - 1)));
 		}

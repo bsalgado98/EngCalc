@@ -20,6 +20,18 @@ public class Equation {
 		
 	}
 	
+	public Equation() {
+		
+	}
+	
+	public void setEquation(String eqName) {
+		this.eqName = eqName;
+	}
+	
+	public String getEquation() {
+		return this.eqName;
+	}
+	
 	//ASSUMES values are inputed in correct format (handled by GUI)
 	public void inputValues(HashMap<String, Double> values, ArrayList<String> options) {
 		this.values = values;
@@ -28,6 +40,10 @@ public class Equation {
 	
 	public void inputValues(HashMap<String, Double> values) {
 		this.values = values;
+	}
+	
+	public double solve() {
+		return -999999.0;
 	}
 	
 	//Input the name of the equation set you want ("Econ Exam 1", "Econ Exam 2", etc...) and get back the list of equation names from that set

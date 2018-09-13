@@ -8,7 +8,7 @@
     -fx-background-color: transparent ;
 }
 
-.titledpane {
+.titled-pane {
     -fx-background-color: #26A69A;
     font-family: 'Times New Roman', sans-serif;
 }
@@ -16,4 +16,10 @@
 .vbox {
     -fx-background-color: #26A69A;
     font-family: 'Times New Roman', sans-serif;
+}
+
+.hbox {
+    -fx-background-color: #2f4f4f;
+    -fx-padding: 15;
+    -fx-spacing: 10;
 }
