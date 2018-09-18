@@ -29,7 +29,7 @@ public class Exam1 extends Equation{
 			case "Annual Worth":
 				return annualWorth();
 			default:
-				return -1000;
+				return -1001;
 		}
 		
 	}
